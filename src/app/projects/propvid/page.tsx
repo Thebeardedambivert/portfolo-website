@@ -63,7 +63,7 @@ export default function PropVidCaseStudy() {
                             <div className="w-full aspect-[16/9] rounded-2xl bg-slate-900 border border-slate-700 overflow-hidden relative group">
                                 <iframe
                                     className="w-full h-full"
-                                    src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID"
+                                    src="https://www.youtube.com/embed/zzxUVu9CMG8"
                                     title="Project Demo"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
