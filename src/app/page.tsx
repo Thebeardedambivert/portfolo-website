@@ -1,65 +1,141 @@
-import Image from "next/image";
+import PageWrapper from "@/components/PageWrapper";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Code2, Terminal, Workflow, Layers, Webhook } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <PageWrapper>
+      {/* Hero Section */}
+      <section className="relative pt-20 pb-16 px-6 lg:px-12 max-w-7xl mx-auto overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex-1 space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Available for new projects
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-slate-100">
+              AI automations + web apps that <span className="text-primary">reduce busywork</span>.
+            </h1>
+            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+              AI Automation Engineer • React + Python • n8n/Zapier • Remote. I build robust architectures that handle complex logic and scale with your business needs.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <a
+                href="https://cal.com/nwachukwu-cyril-st5fot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary hover:bg-primary/90 text-background-dark px-8 py-4 rounded-xl text-base font-bold transition-all flex items-center gap-2 group"
+              >
+                Book a Call
+                <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+              <Link
+                href="/projects"
+                className="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 px-8 py-4 rounded-xl text-base font-bold transition-all"
+              >
+                View My Work
+              </Link>
+            </div>
+          </div>
+          <div className="flex-1 w-full max-w-[500px]">
+            {/* Using the image from the html export or a placeholder if it fails */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <div className="relative aspect-square rounded-2xl bg-slate-100 dark:bg-slate-900 overflow-hidden border border-slate-200 dark:border-slate-800 flex items-center justify-center">
+                <img className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" alt="Abstract 3D digital neural network visualization" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Marquee */}
+      <div className="w-full border-y border-primary/10 py-8 bg-slate-50 dark:bg-slate-900/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6 overflow-hidden">
+          <div className="flex flex-wrap justify-around items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+            <span className="text-xl font-bold flex items-center gap-2"><Code2 /> React</span>
+            <span className="text-xl font-bold flex items-center gap-2"><Terminal /> Python</span>
+            <span className="text-xl font-bold flex items-center gap-2"><Workflow /> n8n</span>
+            <span className="text-xl font-bold flex items-center gap-2"><Layers /> LangGraph</span>
+            <span className="text-xl font-bold flex items-center gap-2"><Webhook /> Zapier</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Proof Section */}
+      <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="flex flex-wrap gap-4 justify-center">
+          <div className="px-6 py-3 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold">Workflow automation</div>
+          <div className="px-6 py-3 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold">Multi-step pipelines</div>
+          <div className="px-6 py-3 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold">Agent orchestration</div>
+          <div className="px-6 py-3 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold">Production-minded</div>
+        </div>
+
+        <div className="mt-20 flex flex-col items-center text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Professional Bio</h2>
+          <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Specializing in AI agents, automation pipelines, and production-ready systems. I build robust architectures that handle complex logic and scale with your business needs. With a deep background in Fullstack engineering and LLM orchestration, I bridge the gap between experimental AI and reliable enterprise software.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-black tracking-tight mb-4">Core Services</h2>
+          <div className="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
         </div>
-      </main>
-    </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Service 1 */}
+          <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all group">
+            <div className="size-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span className="material-symbols-outlined text-primary text-3xl">web</span>
+            </div>
+            <h3 className="text-xl font-bold mb-4">Web Apps</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              Performance-focused React and Next.js applications integrated with AI capabilities and intuitive user interfaces.
+            </p>
+            <ul className="space-y-3 text-sm text-slate-500">
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary size-4" /> Responsive Dashboard</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary size-4" /> Real-time UI updates</li>
+            </ul>
+          </div>
+
+          {/* Service 2 */}
+          <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all group">
+            <div className="size-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span className="material-symbols-outlined text-primary text-3xl">api</span>
+            </div>
+            <h3 className="text-xl font-bold mb-4">APIs & Backend</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              Scalable Python backends and custom API integrations ensuring seamless data flow across your technical stack.
+            </p>
+            <ul className="space-y-3 text-sm text-slate-500">
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary size-4" /> FastAPI Development</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary size-4" /> Database Management</li>
+            </ul>
+          </div>
+
+          {/* Service 3 */}
+          <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all group">
+            <div className="size-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span className="material-symbols-outlined text-primary text-3xl">smart_toy</span>
+            </div>
+            <h3 className="text-xl font-bold mb-4">Automation</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              Complex n8n and Zapier workflows combined with AI agents to automate repetitive tasks and optimize workflows.
+            </p>
+            <ul className="space-y-3 text-sm text-slate-500">
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary size-4" /> AI Agentic Workflows</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="text-primary size-4" /> Error Handling & Logs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </PageWrapper>
   );
 }
