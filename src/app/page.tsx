@@ -18,10 +18,10 @@ export default function Home() {
               </span>
               Available for new projects
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
               AI automations + web apps that <span className="text-primary">reduce busywork</span>.
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
               AI Automation Engineer • React + Python • n8n/Zapier • Remote. I build robust architectures that handle complex logic and scale with your business needs.
             </p>
             {/* Desktop-only CTA buttons — hidden on mobile, shown on lg+ */}
@@ -80,7 +80,7 @@ export default function Home() {
       {/* Tech Marquee */}
       <div className="w-full border-y border-primary/10 py-8 bg-slate-50 dark:bg-slate-900/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 overflow-hidden">
-          <div className="flex flex-wrap justify-around items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+          <div className="flex flex-wrap justify-around items-center gap-8 opacity-80 sm:opacity-60 sm:grayscale hover:grayscale-0 hover:opacity-100 transition-all text-slate-700 dark:text-slate-300">
             <span className="text-xl font-bold flex items-center gap-2"><Code2 /> React</span>
             <span className="text-xl font-bold flex items-center gap-2"><Terminal /> Python</span>
             <span className="text-xl font-bold flex items-center gap-2"><Workflow /> n8n</span>
