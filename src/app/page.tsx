@@ -6,9 +6,11 @@ export default function Home() {
   return (
     <PageWrapper>
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 px-6 lg:px-12 max-w-7xl mx-auto overflow-hidden">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="flex-1 space-y-8">
+      <section className="relative pt-12 pb-10 px-4 sm:pt-16 sm:pb-14 sm:px-6 lg:pt-20 lg:pb-16 lg:px-12 max-w-7xl mx-auto overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+
+          {/* Text block — always first; desktop buttons live inside here */}
+          <div className="flex-1 w-full space-y-6 lg:space-y-8 order-1">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -16,13 +18,14 @@ export default function Home() {
               </span>
               Available for new projects
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-slate-100">
               AI automations + web apps that <span className="text-primary">reduce busywork</span>.
             </h1>
-            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
               AI Automation Engineer • React + Python • n8n/Zapier • Remote. I build robust architectures that handle complex logic and scale with your business needs.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            {/* Desktop-only CTA buttons — hidden on mobile, shown on lg+ */}
+            <div className="hidden lg:flex gap-4 pt-2">
               <a
                 href="https://cal.com/nwachukwu-cyril-st5fot"
                 target="_blank"
@@ -40,8 +43,9 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex-1 w-full max-w-[500px]">
-            {/* Using the image from the html export or a placeholder if it fails */}
+
+          {/* Hero image — order-2 on mobile (between headline and buttons), order-last on desktop */}
+          <div className="flex-1 w-full max-w-[420px] sm:max-w-[500px] order-2 lg:order-last">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <div className="relative aspect-square rounded-2xl bg-slate-100 dark:bg-slate-900 overflow-hidden border border-slate-200 dark:border-slate-800 flex items-center justify-center">
@@ -49,8 +53,29 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Mobile-only CTA buttons — order-3 (below image), hidden on lg+ */}
+          <div className="w-full flex flex-col sm:flex-row gap-3 sm:gap-4 order-3 lg:hidden">
+            <a
+              href="https://cal.com/nwachukwu-cyril-st5fot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-background-dark px-8 py-4 rounded-xl text-base font-bold transition-all flex items-center justify-center gap-2 group"
+            >
+              Book a Call
+              <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+            <Link
+              href="/projects"
+              className="w-full sm:w-auto text-center bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 px-8 py-4 rounded-xl text-base font-bold transition-all"
+            >
+              View My Work
+            </Link>
+          </div>
+
         </div>
       </section>
+
 
       {/* Tech Marquee */}
       <div className="w-full border-y border-primary/10 py-8 bg-slate-50 dark:bg-slate-900/50 backdrop-blur-sm">
